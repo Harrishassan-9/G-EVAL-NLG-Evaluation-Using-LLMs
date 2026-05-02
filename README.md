@@ -2,11 +2,11 @@
 
 ## 👥 Team
 
-| Name | Student ID |
-|------|-----------|
-| Harris Hassan Syed | 22i-1947 |
-| Muhammad Muttayab | 22i-1949 |
-| Fadil Falak | 22i-1815 |
+| Name 
+
+| Harris Hassan Syed 
+| Muhammad Muttayab 
+| Fadil Falak 
 
 ---
 
