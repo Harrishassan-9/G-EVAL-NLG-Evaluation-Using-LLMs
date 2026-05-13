@@ -1,0 +1,436 @@
+{
+  "backend": "local",
+  "model_name": "mistralai/Mistral-7B-Instruct-v0.3",
+  "runs": [
+    {
+      "dataset": "summeval",
+      "dimension": "coherence",
+      "variant": "baseline",
+      "correlation": {
+        "pearson": 0.5034194404261696,
+        "spearman": 0.4363498018472989,
+        "kendalltau": 0.36651861742428443,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.35827974884708924,
+        "pearson_p": 0.044061858397780075,
+        "spearman": 0.372517672654213,
+        "spearman_p": 0.03575701963689077,
+        "kendalltau": 0.30411073038581743,
+        "kendalltau_p": 0.037678188951265915,
+        "n": 32
+      },
+      "results_fp": "Assignment3/outputs/summeval_coherence_baseline.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "coherence",
+      "variant": "proposed",
+      "correlation": {
+        "pearson": 0.4861482680257212,
+        "spearman": 0.4988854072634923,
+        "kendalltau": 0.4068553356698199,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.32329527064358016,
+        "pearson_p": 0.07109166015843225,
+        "spearman": 0.44419048424835356,
+        "spearman_p": 0.010869854300540563,
+        "kendalltau": 0.34072554155514434,
+        "kendalltau_p": 0.013522630497414964,
+        "n": 32
+      },
+      "significance_vs_baseline": {
+        "stat": 49.0,
+        "p_value": 0.7365,
+        "verdict": "not significant (p=0.737); proposed may still be directionally better",
+        "mean_error_baseline": 0.849,
+        "mean_error_proposed": 0.8698
+      },
+      "results_fp": "Assignment3/outputs/summeval_coherence_proposed.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "coherence",
+      "variant": "multilingual-fr",
+      "correlation": {
+        "pearson": 0.533542218239158,
+        "spearman": 0.48545493083147506,
+        "kendalltau": 0.42073411136542976,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "results_fp": "Assignment3/outputs/summeval_coherence_multilingual_fr.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "coherence",
+      "variant": "debiased-single-pass",
+      "correlation": {
+        "pearson": 0.5059376394049968,
+        "spearman": 0.432680137147033,
+        "kendalltau": 0.3649653359130347,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.32598272001044654,
+        "pearson_p": 0.06864203180173718,
+        "spearman": 0.3513293594493691,
+        "spearman_p": 0.04864242694761938,
+        "kendalltau": 0.28248812854335464,
+        "kendalltau_p": 0.05261659048632908,
+        "n": 32
+      },
+      "results_fp": "Assignment3/outputs/summeval_coherence_debiased.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "consistency",
+      "variant": "baseline",
+      "correlation": {
+        "pearson": 0.5653431247676571,
+        "spearman": 0.4727243487088056,
+        "kendalltau": 0.4296436809470657,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.5157589245171094,
+        "pearson_p": 0.002516795037779691,
+        "spearman": 0.45334808292070233,
+        "spearman_p": 0.00916527837925564,
+        "kendalltau": 0.40074449073654006,
+        "kendalltau_p": 0.013758132327535347,
+        "n": 32
+      },
+      "results_fp": "Assignment3/outputs/summeval_consistency_baseline.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "consistency",
+      "variant": "proposed",
+      "correlation": {
+        "pearson": 0.6498881483347813,
+        "spearman": 0.42788771311070617,
+        "kendalltau": 0.37915068294271503,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.5595794066018892,
+        "pearson_p": 0.0008689195960334083,
+        "spearman": 0.39771802608614404,
+        "spearman_p": 0.02418205596864508,
+        "kendalltau": 0.33652069162867415,
+        "kendalltau_p": 0.03330622413946936,
+        "n": 32
+      },
+      "significance_vs_baseline": {
+        "stat": 4.0,
+        "p_value": 0.6473,
+        "verdict": "not significant (p=0.647); proposed may still be directionally better",
+        "mean_error_baseline": 0.5781,
+        "mean_error_proposed": 0.5885
+      },
+      "results_fp": "Assignment3/outputs/summeval_consistency_proposed.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "consistency",
+      "variant": "multilingual-fr",
+      "correlation": {
+        "pearson": 0.6023608127275357,
+        "spearman": 0.41423723275927105,
+        "kendalltau": 0.3835622093822842,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "results_fp": "Assignment3/outputs/summeval_consistency_multilingual_fr.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "consistency",
+      "variant": "debiased-single-pass",
+      "correlation": {
+        "pearson": 0.5066476043130185,
+        "spearman": 0.3534289027416637,
+        "kendalltau": 0.3173625075159482,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.4769078259572911,
+        "pearson_p": 0.005784467386156203,
+        "spearman": 0.33208063964452744,
+        "spearman_p": 0.06332789936054224,
+        "kendalltau": 0.2870103652815133,
+        "kendalltau_p": 0.07195968377076502,
+        "n": 32
+      },
+      "results_fp": "Assignment3/outputs/summeval_consistency_debiased.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "fluency",
+      "variant": "baseline",
+      "correlation": {
+        "pearson": 0.6942523849984346,
+        "spearman": 0.6092086535344463,
+        "kendalltau": 0.5619103169327696,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.6797813541768799,
+        "pearson_p": 1.876056011850038e-05,
+        "spearman": 0.6050633809075329,
+        "spearman_p": 0.00024388162587116093,
+        "kendalltau": 0.5554920598635309,
+        "kendalltau_p": 0.0007548240485517595,
+        "n": 32
+      },
+      "results_fp": "Assignment3/outputs/summeval_fluency_baseline.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "fluency",
+      "variant": "proposed",
+      "correlation": {
+        "pearson": 0.6823576608637549,
+        "spearman": 0.5452405685444335,
+        "kendalltau": 0.4883320049026256,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.681076898665474,
+        "pearson_p": 1.7829040628749803e-05,
+        "spearman": 0.5387678561476027,
+        "spearman_p": 0.0014658485666987858,
+        "kendalltau": 0.481444035987943,
+        "kendalltau_p": 0.002100850428056921,
+        "n": 32
+      },
+      "significance_vs_baseline": {
+        "stat": 8.0,
+        "p_value": 0.7057,
+        "verdict": "not significant (p=0.706); proposed may still be directionally better",
+        "mean_error_baseline": 1.7292,
+        "mean_error_proposed": 1.75
+      },
+      "results_fp": "Assignment3/outputs/summeval_fluency_proposed.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "fluency",
+      "variant": "multilingual-fr",
+      "correlation": {
+        "pearson": 0.5155884004272914,
+        "spearman": 0.5097901969665652,
+        "kendalltau": 0.4709696354699236,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "results_fp": "Assignment3/outputs/summeval_fluency_multilingual_fr.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "fluency",
+      "variant": "debiased-single-pass",
+      "correlation": {
+        "pearson": 0.5443535844894117,
+        "spearman": 0.4922303827223276,
+        "kendalltau": 0.45461742674381933,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.5447372352366694,
+        "pearson_p": 0.0012660151590991784,
+        "spearman": 0.49033508752241745,
+        "spearman_p": 0.00438560716558696,
+        "kendalltau": 0.4501631670101311,
+        "kendalltau_p": 0.006332083527740864,
+        "n": 32
+      },
+      "results_fp": "Assignment3/outputs/summeval_fluency_debiased.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "relevance",
+      "variant": "baseline",
+      "correlation": {
+        "pearson": 0.6314347947228962,
+        "spearman": 0.678753140623853,
+        "kendalltau": 0.5767394812152359,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.5692696749556376,
+        "pearson_p": 0.0006731033581071405,
+        "spearman": 0.6204396494505483,
+        "spearman_p": 0.00015176592323828004,
+        "kendalltau": 0.4977622550281102,
+        "kendalltau_p": 0.0006770020417371407,
+        "n": 32
+      },
+      "results_fp": "Assignment3/outputs/summeval_relevance_baseline.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "relevance",
+      "variant": "proposed",
+      "correlation": {
+        "pearson": 0.6738977001883804,
+        "spearman": 0.7471882114122523,
+        "kendalltau": 0.5954706681813862,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.6333343287184613,
+        "pearson_p": 9.997481902766198e-05,
+        "spearman": 0.712086000817115,
+        "spearman_p": 4.860573565181558e-06,
+        "kendalltau": 0.5363989048891137,
+        "kendalltau_p": 0.00011986338808985813,
+        "n": 32
+      },
+      "significance_vs_baseline": {
+        "stat": 33.5,
+        "p_value": 0.0941,
+        "verdict": "not significant (p=0.094); proposed may still be directionally better",
+        "mean_error_baseline": 0.9167,
+        "mean_error_proposed": 0.875
+      },
+      "results_fp": "Assignment3/outputs/summeval_relevance_proposed.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "relevance",
+      "variant": "multilingual-fr",
+      "correlation": {
+        "pearson": 0.5878728909316203,
+        "spearman": 0.6669196841177979,
+        "kendalltau": 0.5543433450023273,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "results_fp": "Assignment3/outputs/summeval_relevance_multilingual_fr.json"
+    },
+    {
+      "dataset": "summeval",
+      "dimension": "relevance",
+      "variant": "debiased-single-pass",
+      "correlation": {
+        "pearson": 0.6645540188290329,
+        "spearman": 0.6610747158641354,
+        "kendalltau": 0.5701283870928077,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.5747431833195549,
+        "pearson_p": 0.0005806564151534398,
+        "spearman": 0.598813003403623,
+        "spearman_p": 0.00029371997150161327,
+        "kendalltau": 0.48717156875091633,
+        "kendalltau_p": 0.0008933989225919788,
+        "n": 32
+      },
+      "results_fp": "Assignment3/outputs/summeval_relevance_debiased.json"
+    },
+    {
+      "dataset": "realsumm",
+      "dimension": "litepyramid_recall",
+      "variant": "baseline",
+      "correlation": {
+        "pearson": 0.4054659650923848,
+        "spearman": 0.3175727247611608,
+        "kendalltau": 0.2798283257480997,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.5431257632517386,
+        "pearson_p": 0.002820668890851792,
+        "spearman": 0.49574320450297726,
+        "spearman_p": 0.007303072374671716,
+        "kendalltau": 0.40224053797481846,
+        "kendalltau_p": 0.011620089279182998,
+        "n": 28
+      },
+      "results_fp": "Assignment3/outputs/realsumm_baseline.json"
+    },
+    {
+      "dataset": "realsumm",
+      "dimension": "litepyramid_recall",
+      "variant": "proposed",
+      "correlation": {
+        "pearson": 0.3915324928902536,
+        "spearman": 0.3021446228248977,
+        "kendalltau": 0.2561777237131236,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.5342085304313215,
+        "pearson_p": 0.0034092135749607135,
+        "spearman": 0.48015039519522545,
+        "spearman_p": 0.009711976556983254,
+        "kendalltau": 0.3810309826521122,
+        "kendalltau_p": 0.013716566933629536,
+        "n": 28
+      },
+      "significance_vs_baseline": {
+        "stat": 2.0,
+        "p_value": 0.7181,
+        "verdict": "not significant (p=0.718); proposed may still be directionally better",
+        "mean_error_baseline": 2.9558,
+        "mean_error_proposed": 2.9677
+      },
+      "results_fp": "Assignment3/outputs/realsumm_proposed.json"
+    },
+    {
+      "dataset": "realsumm",
+      "dimension": "litepyramid_recall",
+      "variant": "multilingual-fr",
+      "correlation": {
+        "pearson": 0.5277467423309411,
+        "spearman": 0.35901557259901196,
+        "kendalltau": 0.3193568243110898,
+        "valid_docs": 1,
+        "skipped_docs": 1
+      },
+      "results_fp": "Assignment3/outputs/realsumm_multilingual_fr.json"
+    },
+    {
+      "dataset": "realsumm",
+      "dimension": "litepyramid_recall",
+      "variant": "debiased-single-pass",
+      "correlation": {
+        "pearson": 0.36139203212021764,
+        "spearman": 0.28157964626055665,
+        "kendalltau": 0.24767996457493596,
+        "valid_docs": 2,
+        "skipped_docs": 0
+      },
+      "corpus_correlation": {
+        "pearson": 0.5025561602273968,
+        "pearson_p": 0.00642122801885686,
+        "spearman": 0.4481661566123535,
+        "spearman_p": 0.01676747016258054,
+        "kendalltau": 0.37356850647118695,
+        "kendalltau_p": 0.01922545492403507,
+        "n": 28
+      },
+      "results_fp": "Assignment3/outputs/realsumm_debiased.json"
+    }
+  ]
+}
