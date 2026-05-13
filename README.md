@@ -16,9 +16,9 @@ This project is a full-cycle study of **G-EVAL** ([Zhong et al., 2023](https://a
 
 | Phase | Focus | Model Used |
 |-------|-------|-----------|
-| Assignment 1 | Systematic paper analysis & proposed extensions | — |
-| Assignment 2 | Scaled replication of paper results | Llama-3.3-70B (Groq API) |
-| Assignment 3 | Novel extensions: self-consistency, multilingual, debiasing | Mistral-7B (local, 4-bit) |
+| Phase 1 | Systematic paper analysis & proposed extensions | — |
+| Phase 2 | Scaled replication of paper results | Llama-3.3-70B (Groq API) |
+| Phase 3 | Novel extensions: self-consistency, multilingual, debiasing | Mistral-7B (local, 4-bit) |
 
 ---
 
@@ -38,7 +38,7 @@ The framework is **zero-shot** — no training data required, only benchmark met
 
 ---
 
-## 📦 Assignment 1 — Systematic Paper Analysis
+## 📦 Phase 1 — Systematic Paper Analysis
 
 **Goal:** Deeply understand the G-EVAL paper and identify research gaps.
 
@@ -52,7 +52,7 @@ The framework is **zero-shot** — no training data required, only benchmark met
 | Reproducibility | Closed-source GPT-4 with no public log-probability access |
 | Language Coverage | English-only (CNN/DailyMail, XSum, Topical-Chat) |
 
-### Proposed Extensions (implemented in Assignment 3)
+### Proposed Extensions (implemented in Phase 3)
 
 - **Open-source LLM replacement** — Replace GPT-4 with LLaMA/Mistral for reproducibility
 - **Multilingual adaptation** — Extend evaluation prompts to languages beyond English
@@ -60,7 +60,7 @@ The framework is **zero-shot** — no training data required, only benchmark met
 
 ---
 
-## 🔁 Assignment 2 — Replication
+## 🔁 Phase 2 — Replication
 
 **Goal:** Replicate G-EVAL results at reduced cost using an open-weight model.
 
@@ -88,10 +88,10 @@ export GROQ_API_KEY=your_key_here
 ### Usage
 
 ```bash
-python assignment2/run_replication.py
+python Phase2/run_replication.py
 ```
 
-Results are saved per dimension in `assignment2/results/groq_{dim}.json` with checkpoint/resume support.
+Results are saved per dimension in `Phase2/results/groq_{dim}.json` with checkpoint/resume support.
 
 ### Results
 
@@ -107,9 +107,9 @@ Results are saved per dimension in `assignment2/results/groq_{dim}.json` with ch
 
 ---
 
-## 🚀 Assignment 3 — Novel Extensions
+## 🚀 Phase 3 — Novel Extensions
 
-**Goal:** Implement the three extensions proposed in Assignment 1 using a fully local, open-source evaluator.
+**Goal:** Implement the three extensions proposed in Phase 1 using a fully local, open-source evaluator.
 
 ### Model
 
@@ -126,7 +126,7 @@ pip install transformers bitsandbytes accelerate scipy numpy datasets
 Each (document, summary) pair is evaluated **3 times at temperature=0.7**, and the mean score is used as the final G-EVAL output. This marginalizes stochastic variance without needing log-probability access.
 
 ```bash
-python assignment3/mistral_eval.py --variant proposed --n_samples 3 --temperature 0.7
+python Phase3/mistral_eval.py --variant proposed --n_samples 3 --temperature 0.7
 ```
 
 **Results:**
@@ -145,7 +145,7 @@ python assignment3/mistral_eval.py --variant proposed --n_samples 3 --temperatur
 All evaluation prompts were translated to French and applied to SummEval (English documents) and MLSUM (French documents).
 
 ```bash
-python assignment3/mistral_eval.py --variant multilingual --language fr
+python Phase/mistral_eval.py --variant multilingual --language fr
 ```
 
 **Results (English vs. French prompt, Spearman ρ):**
@@ -164,7 +164,7 @@ python assignment3/mistral_eval.py --variant multilingual --language fr
 A system prompt explicitly instructing the model to ignore summary length and anchor judgment strictly on stated criteria.
 
 ```bash
-python assignment3/mistral_eval.py --variant debiased
+python Phase/mistral_eval.py --variant debiased
 ```
 
 **Finding:** Debiasing consistently underperformed the baseline across all dimensions. The added constraint over-compressed the score distribution, reducing rank correlation. **Fine-tuning on human-scored examples is the more effective path** for small models.
